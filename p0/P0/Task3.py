@@ -66,6 +66,7 @@ final_result_unique = sorted(list(set(final_result)))
 #print("The numbers called by people in Bangalore have codes:")
 print(*final_result_unique, sep = "\n")
 
+# Part B
+
 #print(final_result)
 print(f"{round(final_result.count('(080)') / len(final_result), 2) * 100} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
-# Part B

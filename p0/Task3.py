@@ -3,12 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-
-with open('texts.csv', 'r') as f:
+with open(r"C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\texts.csv", 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open('calls.csv', 'r') as f:
+with open(R'C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\p0\calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -44,3 +43,30 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+# Part A
+
+results = []
+for element in calls:
+  if element[0][0:5] == '(080)':
+    results.append(element[1])
+    
+final_result = []
+
+for element in results:
+  if element[0] == '(':
+    index_needed = element.index(')')
+    final_result.append(element[0:index_needed + 1])
+  elif element[0] in ['7', '8' ,'9']:
+    final_result.append(element[0:4])
+  else:
+    final_result.append(element[0:3])
+
+final_result_unique = sorted(list(set(final_result)))
+
+#print("The numbers called by people in Bangalore have codes:")
+print(*final_result_unique, sep = "\n")
+
+# Part B
+
+#print(final_result)
+print(f"{round(final_result.count('(080)') / len(final_result), 2) * 100} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")

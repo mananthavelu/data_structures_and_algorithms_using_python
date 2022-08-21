@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\texts.csv", 'r') as f:
+with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(R'C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\p0\callscopy.csv', 'r') as f:
+with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -28,12 +28,21 @@ The list of numbers should be print out one per line in lexicographic order with
 calling_numbers = []
 for element in calls:
     if element[0][0:3] == '140':
-        calling_numbers.append(element[1])
+        calling_numbers.append(element[0])
 
-print(calling_numbers)
+        
 
-receiving_nos = map(lambda x: x[1], calls)
-sending_test = map(lambda x: x[0], texts)
-receiving_test = map(lambda x: x[1], texts)
+call_nos = set(calling_numbers)
 
-print(list(receiving_nos))
+receiving_nos = set(map(lambda x: x[1], calls))
+sending_test = set(map(lambda x: x[0], texts))
+receiving_test = set(map(lambda x: x[1], texts))
+
+result1 = call_nos.difference(receiving_nos)
+result2 = result1.difference(sending_test)
+result3 = result2.difference(receiving_test)
+
+print(f"These numbers could be telemarketers: ")
+
+print(*sorted(list(result3)), sep = "\n")
+

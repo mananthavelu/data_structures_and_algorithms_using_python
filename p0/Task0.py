@@ -25,11 +25,11 @@ print(f"Last record of calls, {calls[-1][0]} calls {calls[-1][1]} at time {calls
 
 
 """
-# Time complexity :O(1)
+# Time complexity :O(1)- Worst case
 
 Index based retrivals in an array is a constant time operation. These 7 different retrivals are simplified as O(1)
 
-# Space complexity :O(1)
+# Space complexity :O(1)- Worst case
 
 This is because of the space allocated for storing the retrived results. 
 In total; we retrive 7 different values using index of a 2-dimensional array. However given the (in)significance 

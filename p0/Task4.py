@@ -23,7 +23,7 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
-
+# Identify the telemarketers O(n)
 calling_numbers = []
 for element in calls:
     if element[0][0:3] == '140':
@@ -44,30 +44,25 @@ print(f"These numbers could be telemarketers: ")
 print(*sorted(list(result3)), sep = "\n")
 
 """
-# Time complexity :O(nlogn)
+# Time complexity :O(nlogn) - Worst case
 
 whereas;
 n - total number of calls
 
-a. Finding 'final_result' requires O(n)
+a. Finding 'call_nos' requires O(n)
 
-b. Once the 'final_result' is constrcuted, then it needs one more complete traverse to collect the i)fixed lines ii)mobile numbers and iii)Tele marketers.
-This needs O(n)
+b. Once the 'call_nos' is constrcuted, then remaining set operations are constant time operations
 
 c. Sorting needs O(nlogn)
 
 So overall:
 
-O(n + n + nlogn + constant operations)
+O(n + nlogn + constant operations)
 
 Final and predominant time complexity: O(nlogn)
-Index based retrivals in an array is a constant time operation. However as we do this for all elements twice, in normal and worst case,
-O(n*n) will be needed.
 
-# Space complexity :O(n)
+# Space complexity :O(n)- Worst case
 
-We store results in 'results' and 'final_result' which each count for O(n) making the space complexity: O(n + n) i.e O(2n)
-
-Simplifying the above space yields O(n)
+In the worst case, all the numbers which call could be telemarketers. Thus O(n)
 
 """ 

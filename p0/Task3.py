@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\texts.csv", 'r') as f:
+with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(R'C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\p0\calls.csv', 'r') as f:
+with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -70,3 +70,34 @@ print(*final_result_unique, sep = "\n")
 
 #print(final_result)
 print(f"{round(final_result.count('(080)') / len(final_result), 2) * 100} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
+
+
+"""
+Part - A:
+
+# Time complexity :O(nlogn)
+
+whereas;
+n - total number of calls
+
+The different number of operations we perform include;
+
+a. Finding ' results' require O(n)
+b. Once the 'results' is constrcuted, then it needs one more complete traverse to collect the i)fixed lines ii)mobile numbers and iii)Tele marketers.
+This needs O(n)
+c. Sorting needs O(nlogn)
+
+So overall:
+
+O(n + n + nlogn + constant operations)
+
+Final and predominant time complexity: O(nlogn)
+
+# Space complexity :O(n)
+
+We store results in 'results' and 'final_result' which each count for O(n) making the space complexity: O(n + n) i.e O(2n)
+
+Simplifying the above by neglecting the constant time operations yield O(n)
+
+""" 

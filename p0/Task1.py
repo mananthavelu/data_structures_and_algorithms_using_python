@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\texts.csv", 'r') as f:
+with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(R'C:\Users\32470\Desktop\coding_practice\data_structures_and_algorithms_using_python\p0\calls.csv', 'r') as f:
+with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -34,18 +34,25 @@ def get_all_telephone_numbers(nested_list, position):
     # Collect the list of phone numbers using index position
     return list(map(itemgetter(position), nested_list))
 
-total_records_in_both_files = get_all_telephone_numbers(texts, 0) + get_all_telephone_numbers(texts, 1) + get_all_telephone_numbers(calls, 0)  + get_all_telephone_numbers(calls, 1)
-print(f"There are {len(set(total_records_in_both_files))} different telephone numbers in the records.")
+total_records_in_both_files = len(set(get_all_telephone_numbers(texts, 0) + get_all_telephone_numbers(texts, 1) + get_all_telephone_numbers(calls, 0)  + get_all_telephone_numbers(calls, 1)))
+print(f"There are {total_records_in_both_files} different telephone numbers in the records.")
 
 
 """
-Eg.
-example_list = [[1,2],[3,4]]
-first_element_in_each_sub_list = map(itemgetter(0), example_list)
-print(list(first_element_in_each_sub_list))
+# Time complexity :O(m**2)
 
-returns
+whereas;
+n - total number of calls
+m - total number of texts messages
 
-[1, 3]
+Index based retrivals in an array is a constant time operation. However as we do this for all elements twice, in normal and worst case,
+O(n*n) / O(m*m) will be needed.
+
+if we consider the total number of texts > total number of calls; then the simplified version of time complexity is: O(m**2)
+
+# Space complexity :O(1)
+
+The final results are calculated directly and stored in a variable 'total_records_in_both_files'.
 
 """ 
+

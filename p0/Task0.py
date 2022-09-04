@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
+with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
+with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -24,14 +24,3 @@ print(f"Last record of calls, {calls[-1][0]} calls {calls[-1][1]} at time {calls
 
 
 
-"""
-# Time complexity :O(1)- Worst case
-
-Index based retrivals in an array is a constant time operation. These 7 different retrivals are simplified as O(1)
-
-# Space complexity :O(1)- Worst case
-
-This is because of the space allocated for storing the retrived results. 
-In total; we retrive 7 different values using index of a 2-dimensional array. However given the (in)significance 
-of the individual retrival to the size of the array; O(1) is considered.
-""" 

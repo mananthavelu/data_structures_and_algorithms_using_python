@@ -1,0 +1,96 @@
+Task0:
+
+
+# Time complexity :O(1)- Worst case
+
+Index based retrivals in an array is a constant time operation. These 7 different retrivals are simplified as O(1)
+
+# Space complexity :O(1)- Worst case
+
+This is because of the space allocated for storing the retrived results. 
+In total; we retrive 7 different values using index of a 2-dimensional array. However given the (in)significance 
+of the individual retrival to the size of the array; O(1) is considered.
+
+
+Task1:
+
+# Time complexity :O(m**2)- Worst case
+
+whereas;
+n - total number of calls
+m - total number of texts messages
+
+Index based retrivals in an array is a constant time operation. However as we do this for all elements twice, in normal and worst case,
+O(n*n) / O(m*m) will be needed.
+
+if we consider the total number of texts > total number of calls; then the simplified version of time complexity is: O(m**2)
+
+# Space complexity :O(1)- Worst case
+
+The final results are calculated directly and stored in a variable 'total_records_in_both_files'.
+
+Task2:
+
+# Time complexity :O(n**2)- Worst case
+
+whereas;
+n - total number of calls
+
+Index based retrivals in an array is a constant time operation. However as we do this for all elements twice, in normal and worst case,
+O(n*n) will be needed.
+
+# Space complexity :O(n)- Worst case
+
+The final results may contain all phone numbers along with the total call duration in worst cae.
+
+Task3:
+
+Part - A:
+
+# Time complexity :O(nlogn)- Worst case
+
+whereas;
+n - total number of calls
+
+The different number of operations we perform include;
+
+a. Finding ' results' require O(n)
+b. Once the 'results' is constrcuted, then it needs one more complete traverse to collect the i)fixed lines ii)mobile numbers and iii)Tele marketers.
+This needs O(n)
+c. Sorting needs O(nlogn)
+
+So overall:
+
+O(n + n + nlogn + constant operations)
+
+Final and predominant time complexity: O(nlogn)
+
+# Space complexity :O(n)- Worst case
+
+We store results in 'results' and 'final_result' which each count for O(n) making the space complexity: O(n + n) i.e O(2n)
+
+Simplifying the above by neglecting the constant time operations yield O(n)
+
+
+Task4:
+
+# Time complexity :O(nlogn) - Worst case
+
+whereas;
+n - total number of calls
+
+a. Finding 'call_nos' requires O(n)
+
+b. Once the 'call_nos' is constrcuted, then remaining set operations are constant time operations
+
+c. Sorting needs O(nlogn)
+
+So overall:
+
+O(n + nlogn + constant operations)
+
+Final and predominant time complexity: O(nlogn)
+
+# Space complexity :O(n)- Worst case
+
+In the worst case, all the numbers which call could be telemarketers. Thus O(n)

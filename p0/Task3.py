@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
+with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
+with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -76,7 +76,7 @@ print(f"{round(final_result.count('(080)') / len(final_result), 2) * 100} percen
 """
 Part - A:
 
-# Time complexity :O(nlogn)
+# Time complexity :O(nlogn)- Worst case
 
 whereas;
 n - total number of calls
@@ -94,7 +94,7 @@ O(n + n + nlogn + constant operations)
 
 Final and predominant time complexity: O(nlogn)
 
-# Space complexity :O(n)
+# Space complexity :O(n)- Worst case
 
 We store results in 'results' and 'final_result' which each count for O(n) making the space complexity: O(n + n) i.e O(2n)
 

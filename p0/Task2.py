@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
+with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
+with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -48,7 +48,7 @@ print(f"{max_dur} spent the longest time, {call_dur_res[max_dur]} seconds, on th
 
 
 """
-# Time complexity :O(n**2)
+# Time complexity :O(n**2)- Worst case
 
 whereas;
 n - total number of calls
@@ -56,7 +56,7 @@ n - total number of calls
 Index based retrivals in an array is a constant time operation. However as we do this for all elements twice, in normal and worst case,
 O(n*n) will be needed.
 
-# Space complexity :O(n)
+# Space complexity :O(n)- Worst case
 
 The final results may contain all phone numbers along with the total call duration in worst cae.
 

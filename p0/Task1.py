@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open(r"C:\Users\32470\Desktop\coding_practice\dsa_python\p0\texts.csv", 'r') as f:
+with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
+with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -39,7 +39,7 @@ print(f"There are {total_records_in_both_files} different telephone numbers in t
 
 
 """
-# Time complexity :O(m**2)
+# Time complexity :O(m**2)- Worst case
 
 whereas;
 n - total number of calls
@@ -50,7 +50,7 @@ O(n*n) / O(m*m) will be needed.
 
 if we consider the total number of texts > total number of calls; then the simplified version of time complexity is: O(m**2)
 
-# Space complexity :O(1)
+# Space complexity :O(1)- Worst case
 
 The final results are calculated directly and stored in a variable 'total_records_in_both_files'.
 

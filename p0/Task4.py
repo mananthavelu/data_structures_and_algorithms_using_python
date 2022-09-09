@@ -23,11 +23,10 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
-# Identify the telemarketers O(n)
+# NUmbers which make calls: O(n)
 calling_numbers = []
 for element in calls:
-    if element[0][0:3] == '140':
-        calling_numbers.append(element[0])
+    calling_numbers.append(element[0])
 
 call_nos = set(calling_numbers)
 

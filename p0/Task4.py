@@ -7,7 +7,7 @@ with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open(r'C:\Users\32470\Desktop\coding_practice\dsa_python\p0\calls.csv', 'r') as f:
+with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 

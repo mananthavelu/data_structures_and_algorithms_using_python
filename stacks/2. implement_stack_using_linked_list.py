@@ -8,3 +8,42 @@
 # Keep the total number of elements , last_index used in the Stack
 # Push the new element to the next available index
 # Remove the element from the last index
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class StackLinkedList:
+    def __init__(self, head = None):
+        self.head = head
+        self.number_of_elements = 0
+        
+    def push(self, data):
+        #The element which we push last will be the first we will remove
+        # Head is here considered as the top of the stack
+        # In this case, we dont need to traverse till tail for pusing a new element/value
+        if self.head is None:
+            self.head = Node(data)
+            return
+        current_node = self.head
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+        number_of_elements += 1
+        return
+    def size(self):
+        return self.number_of_elements
+
+    def is_empty(self):
+        return self.number_of_elements == 0
+    
+    def pop(self):
+        if self.is_empty():
+            return None
+        
+        node_to_pop = self.head
+        self.head = self.head.next
+        self.number_of_elements -= 1
+        return node_to_pop
+        

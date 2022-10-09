@@ -27,3 +27,4 @@ def power_of_two(input_value):
     return 2 * power_of_two(input_value - 1)
 
 print(power_of_two(5))
+

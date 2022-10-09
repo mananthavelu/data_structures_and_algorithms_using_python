@@ -37,3 +37,12 @@ class TreeNode:
     # Check if the right child exists
     def check_left_child(self):
         return self.right != None
+    
+    
+class Tree:
+    def __init__(self, root = None):
+        self.root = TreeNode(root)
+        
+    # Get the root node
+    def get_root(self):
+        return self.root

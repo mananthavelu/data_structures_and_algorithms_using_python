@@ -90,6 +90,7 @@ class BinaryTree:
     2. Create an empty Stack to hold the elements (as intermediate buffer)
     3. Start with root and get the root
     4. Push the root to Stack
+    5. 
     
     """ 
     if self.root is None:

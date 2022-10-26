@@ -1,6 +1,7 @@
 # DFS
 
 # Traversing: 'Visiting' all the nodes once
+# is used for searching a value, inserting a value and deleting the node
 
 # DFS:  Priority to the nodes with childrens first
 # Pre-Order Traversal: root, left, right

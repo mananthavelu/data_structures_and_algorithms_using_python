@@ -1,14 +1,7 @@
-
-
-class Tree():
-    def __init__(self, value=None):
-        self.root = Node(value)
-        
-    def get_root(self):
-        return self.root
-
 # Create a Node
-class Node:
+# Create a Tree Node
+
+class TreeNode:
   def __init__(self, value = None):
     self.value = value
     self.left = None
@@ -40,8 +33,12 @@ class Node:
 
   def __repr__(self):
     return f"Node({self.get_value()})" 
+  
+  def __str__(self):
+    return f"Node({self.get_value()})"
+  
 
-
+# We implement Pre-Order Tree traversal using Stack
 class Stack:
   def __init__(self):
     self.stack = list()
@@ -59,10 +56,11 @@ class Stack:
   def is_empty(self):
     return len(self.stack) != 0
 
+# Create a Binary Tree Class
 
 class BinaryTree:
   def __init__(self, value = None):
-    self.root = Node(value)
+    self.root = TreeNode(value)
 
   def get_root(self):
     return self.root
@@ -85,6 +83,15 @@ class BinaryTree:
     return output
 
   def traverse_pre_order_stack(self):
+    
+    """
+    Steps
+    1. Create an empty output array
+    2. Create an empty Stack to hold the elements (as intermediate buffer)
+    3. Start with root and get the root
+    4. Push the root to Stack
+    
+    """ 
     if self.root is None:
         return []
     visited_nodes = []
@@ -102,10 +109,10 @@ class BinaryTree:
 
 
   def preorderTraversal(self):
-"""
-    :type root: TreeNode
-    :rtype: List[int]
     """
+      :type root: TreeNode
+      :rtype: List[int]
+      """
     if self.root is None:
         return []
     
@@ -114,20 +121,20 @@ class BinaryTree:
     while stack:
         root = stack.pop()
         if root is not None:
-            output.append(root.value)
-            if root.right is not None:
-                stack.append(root.right)
-            if root.left is not None:
-                stack.append(root.left)
+          output.append(root.value)
+          if root.right is not None:
+              stack.append(root.right)
+          elif root.left is not None:
+              stack.append(root.left)
     return output
   # create a tree and add some nodes
 tree = BinaryTree("apple")
 print(tree)
-tree.get_root().set_left_child(Node("banana"))
+tree.get_root().set_left_child(TreeNode("banana"))
 print(tree.get_root().get_left_child())
-tree.get_root().set_right_child(Node("cherry"))
+tree.get_root().set_right_child(TreeNode("cherry"))
 print(tree.get_root().get_right_child())
-tree.get_root().get_left_child().set_left_child(Node("dates"))
+tree.get_root().get_left_child().set_left_child(TreeNode("dates"))
 
 
 print(" traverse_pre_order_stack", tree.traverse_pre_order_stack())

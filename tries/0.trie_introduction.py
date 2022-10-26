@@ -14,9 +14,12 @@ print(type(basic_trie))
 
 # consists of the sequence of characters which can be constructed as a path in a tree
 print(basic_trie['a'])
+print(basic_trie['a']['d'])
 print(basic_trie['a']['word_end'])
+print(basic_trie['h']['i']['word_end'])
 #print(basic_trie['a']['d']['word_end'])
 #print(basic_trie['a']['d']['d']['word_end'])
+""" 
 print("after")
 def word_validation(word_input):
     current_node = basic_trie
@@ -31,7 +34,7 @@ def word_validation(word_input):
         
 print(word_validation('ad'))
 
-
+"""
 # Implementation using dictionary and as Class
 
 class TrieNode(object):

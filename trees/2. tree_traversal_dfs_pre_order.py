@@ -179,7 +179,7 @@ def pre_order_traversal(input_tree, debug_mode = False):
     return visiting_order
 
 
-            
+# Test cases - 1
 # create a tree and add some nodes
 tree = Tree("apple")  # root node
 
@@ -194,7 +194,4 @@ tree.get_root().set_right_child(TreeNode("cherry"))
 tree.get_root().get_left_child().set_left_child(TreeNode("dates"))
 
 # check pre-order traversal
-
 print(pre_order_traversal(tree, debug_mode= True))
-    
-# Troubleshoot why 3 times the dates are appearing

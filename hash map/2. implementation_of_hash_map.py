@@ -95,7 +95,6 @@ class HashMap():
                 return
             head = head.next
             
-        
         head = self.bucket_array[bucket_index]
         new_node.next = head
         self.bucket_array[bucket_index] = new_node
@@ -108,7 +107,6 @@ class HashMap():
             if head.key == key:
                 return head.value
             head = head.next
-            
         return None
     
     def size(self):

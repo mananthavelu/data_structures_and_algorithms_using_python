@@ -1,6 +1,6 @@
 import hashlib
 import datetime
-
+import time
 
 class Block():
     def __init__(self, timestamp, data, previous_hash):
@@ -49,7 +49,7 @@ class BlockChain():
     def traverse(self):
         current_block = self.head
         while current_block is not None:
-            print(f"at {datetime(current_block.timestamp)}, block{current_block.data} is added")
+            print(f"at {datetime.datetime.fromtimestamp(current_block.timestamp)}, block {current_block.data} is added")
             current_block = current_block.next
         return
     
@@ -65,17 +65,14 @@ class BlockChain():
         
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
-import time
+
+# Test Case 1
 block_chain = BlockChain()
 time_stamp_one = time.time()
 data_one = "HelloBlock1"
 previous_hash_one = 0
 block_chain.add_a_block(time_stamp_one, data_one)
 print(f"1 {block_chain}")
-# Test Case 1
-
-#block_one = Block(time_stamp_one, data_one, previous_hash_one)
-#block_chain = BlockChain(block_one)
 
 # Test Case 2
 time_stamp_two = time.time()
@@ -83,6 +80,8 @@ data_two = "HelloBlock2"
 previous_hash_two = 0
 block_chain.add_a_block(time_stamp_two, data_two)
 print(f"2 {block_chain}")
+
+
 # Test Case 3
 time_stamp_three = time.time()
 data_three = "HelloBlock3"
@@ -91,5 +90,5 @@ block_chain.add_a_block(time_stamp_three, data_three)
 
 print(f"3 {block_chain}")
 
-block_chain.traverse()
+print(block_chain.traverse())
 # Reference: https://knowledge.udacity.com/questions/363520

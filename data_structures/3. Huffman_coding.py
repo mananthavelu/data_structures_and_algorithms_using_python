@@ -1,6 +1,8 @@
 import sys
 
 def huffman_encoding(data):
+    build_huffman_tree(data)
+    
     pass
 
 def huffman_decoding(data,tree):

@@ -32,6 +32,17 @@ class LinkedList:
 
         node.next = Node(value)
 
+    def search_v(self, value):
+        if value == self.head.value:
+            return True
+
+        node = self.head
+        while node:
+            if value == node.value:
+                return True
+            node = node.next
+        return False
+
     def size(self):
         size = 0
         node = self.head
@@ -42,13 +53,35 @@ class LinkedList:
         return size
 
 def union(llist_1, llist_2):
-    # Your Solution Here
-    pass
+    results = []
+    head_llist_1 = llist_1.head
+    head_llist_2 = llist_2.head
+    while head_llist_1:
+        value_to_add = head_llist_1.value
+        if value_to_add not in results:
+            results.append(value_to_add)
+        head_llist_1 = head_llist_1.next
+
+    while head_llist_2:
+        value_to_add = head_llist_2.value
+        if value_to_add not in results:
+            results.append(value_to_add)
+        head_llist_2 = head_llist_2.next
+
+    return results
 
 def intersection(llist_1, llist_2):
-    # Your Solution Here
-    pass
+    results = []
+    head_llist_1 = llist_1.head
+    head_llist_2 = llist_2.head
 
+    while head_llist_1:
+        if llist_1.search_v(head_llist_1.value) and llist_2.search_v(head_llist_1.value):
+            results.append(head_llist_1.value)
+        head_llist_1 = head_llist_1.next
+
+    return list(set(results))
+    
 
 # Test case 1
 

@@ -1,9 +1,9 @@
 # Doubly Linked lists
 
-    """
-    These linked lists have the elements where for each element the 'next' and 
-    'previous' elements are stored.
-    """
+"""
+These linked lists have the elements where for each element the 'next' and 
+'previous' elements are stored.
+"""
     
 class DoublyNode:
     def __init__(self, data = None):

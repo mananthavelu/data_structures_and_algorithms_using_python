@@ -1,11 +1,21 @@
-import sys
+# Steps
+
+# Set up a class for TreeNode and Binary Tree
 
 def huffman_encoding(data):
-    build_huffman_tree(data)
+    # Frequency counter for each character in the given data
     
-    pass
+    # Sort using the frequency
+    
+    
+    # Build a tree
+    
+   
+    # Convert a Tree to dictionary
+   pass
 
 def huffman_decoding(data,tree):
+    # Decode
     pass
 
 if __name__ == "__main__":

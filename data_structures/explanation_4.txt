@@ -1,0 +1,4 @@
+The analogy is similar to explanation 2 (file recursion).
+
+Given that a user may exist within the sub-groups; recursion is used to handle thia task.
+As the children are stored in a list; a membership operation helps to search for a target user.

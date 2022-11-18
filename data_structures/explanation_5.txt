@@ -1,0 +1,8 @@
+1. A class ' Block' is used to store all the details in a Block within Blockchain
+2. A separate class of Blockchain is used for Blockchain
+3. Hashing of a data is done with the help of the built-in function in Python though the alternative being a user defined function 
+(similar to the exercise)
+4. Linked List data structure is used as the chain of blocks imitate Linked List strucure (with a pointer to the next block)
+
+
+Reference: https://knowledge.udacity.com/questions/363520

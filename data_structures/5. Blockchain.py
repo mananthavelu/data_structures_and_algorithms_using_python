@@ -2,6 +2,7 @@ import hashlib
 import datetime
 import time
 
+# Create a Block/Node with the required attributes
 class Block():
     def __init__(self, timestamp, data, previous_hash):
         self.timestamp = timestamp
@@ -26,18 +27,19 @@ class Block():
     def __repr__(self):
         return f"data({self.get_data()})"
     
+# Create a Blockchain class / Linked List variant
 class BlockChain():
     def __init__(self, head = None):
         self.head = head
                     
     def add_a_block(self, timestamp, data):
-
+        # If the Blockchain is empty
         if self.head is None:
             self.head = Block(timestamp, data, previous_hash=0)
             return
         
         current_node = self.head
-        # We move until the last block
+        # We move to the end
         while current_node.next:
             current_node = current_node.next
         
@@ -46,6 +48,7 @@ class BlockChain():
         current_node.next = new_block
         return
     
+    # Print the built blocks in the Blockchain
     def traverse(self):
         current_block = self.head
         while current_block is not None:
@@ -91,4 +94,3 @@ block_chain.add_a_block(time_stamp_three, data_three)
 print(f"3 {block_chain}")
 
 print(block_chain.traverse())
-# Reference: https://knowledge.udacity.com/questions/363520

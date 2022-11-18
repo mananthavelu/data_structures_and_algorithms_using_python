@@ -1,0 +1,2 @@
+Algorithm/Technique used: Recursion is used given the fact that the depth of the folder structure may be a large to either traverse.
+Recursion helps us to backtrack to the previous stages (Parent Directory for each file/folder) by recalling the same function.

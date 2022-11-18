@@ -1,0 +1,13 @@
+# Reason for the choice of data structure
+
+Since the requirement is to get, insert, remove a <key, value> pair in a constant time; the following were my thoughts to begin with;
+
+1) Hash Table helps us to retrive an element efficiently than any other data strcuture with Constant operation i.e O(n)
+
+2) However when it comes to insertion or deletion of an element, LinkedList is something a data strucutre I had thought of. In this case; since the eviction policy demands for keeping track of the least recently used element, DoublyLinkedList is of helpful as we can be able to remove/insert on both the ends of the LinkedList.
+
+Making use of the above two data strcuctures fulfilling the eviction policy was the direction i took in solving this problem.
+
+https://knowledge.udacity.com/questions/815698
+https://knowledge.udacity.com/questions/74836
+https://www.youtube.com/watch?v=S6IfqDXWa10&t=118s

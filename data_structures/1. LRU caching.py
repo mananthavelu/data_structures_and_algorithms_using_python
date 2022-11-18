@@ -1,5 +1,6 @@
 # LRU is a criteria used for evicting an element when a cache is full
-# 
+
+# Set up a DoublyLinkedList Node
 class DNode:
     def __init__(self, key = None, value = None):
         self.key = key
@@ -7,11 +8,13 @@ class DNode:
         self.next = None
         self.previous = None
         
+# Set up a DoublyLinkedList
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
-        
+    
+    # Insert a node at the beginning of a linked list
     def add_node(self, DoublyLLNode):
         # If the Doubly Linked List is empty, add a new node as head
         if self.head is None:
@@ -22,7 +25,9 @@ class DoublyLinkedList:
             DoublyLLNode.next = self.head
             self.head.previous = DoublyLLNode
             self.head = DoublyLLNode
-
+    
+    # Remove a node (in any place; it takes constant time)
+    # Appropriately assigning the 'next' and ' previous' pointers helps to make the 'removal'  in constant time.
     def remove_node(self, DoublyLLNode):
         if DoublyLLNode.previous is None and DoublyLLNode.next is None:
             self.head = None
@@ -41,6 +46,7 @@ class DoublyLinkedList:
             DoublyLLNode.next.previous = DoublyLLNode.previous
         return
 
+# Update the LRU Cache
 class LRU_Cache(object):
 
     def __init__(self, capacity):
@@ -52,7 +58,6 @@ class LRU_Cache(object):
         if key in self.hash_map.keys():
             node = self.hash_map[key]
             self.doubly_linked_list.remove_node(node)
-            print(f"{key} is removed and added to front")
             self.doubly_linked_list.add_node(node)
             return node.value
         else:
@@ -63,22 +68,17 @@ class LRU_Cache(object):
             if len(self.hash_map) < self.capacity:
                 self.hash_map[key] = DNode(key, value)
                 self.doubly_linked_list.add_node(self.hash_map[key])
-                print(f"Capacity exists, added {key}, {value}")
-                print(f"Size is {len(self.hash_map)}")
             else:
                 # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item. 
-                # Remove the node which is lease recently used
+                # Remove the node which is least recently used
                 least_used_node = self.doubly_linked_list.tail
                 # Remove this node key in doubly linked list and from hash
-                print(f"Capacity exceeds, removing {least_used_node.key} and {least_used_node.value}")
                 self.hash_map.pop(least_used_node.key)
                 # Remove this node from the Doubly linked list
                 self.doubly_linked_list.remove_node(least_used_node)
                 
                 self.hash_map[key] = DNode(key, value)
                 self.doubly_linked_list.add_node(self.hash_map[key])
-                print(f"Capacity exists, added {key}, {value}")
-                print(f"Size is {len(self.hash_map)}")
 
 our_cache = LRU_Cache(5)
 
@@ -87,10 +87,10 @@ our_cache.set(2, 2)
 our_cache.set(3, 3)
 our_cache.set(4, 4)
 
-our_cache.get(1)       # returns 1
-our_cache.get(2)       # returns 2
+print(our_cache.get(1))       # returns 1
+print(our_cache.get(2))       # returns 2
 
-our_cache.get(9)      # returns -1 because 9 is not present in the cache
+print(our_cache.get(9))      # returns -1 because 9 is not present in the cache
 our_cache.set(5, 5) 
 our_cache.set(6, 6)
 our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
@@ -99,14 +99,8 @@ our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-assert(our_cache.get(11) == -1)
+print(our_cache.get(11) == -1)
 # Test Case 2
-assert(our_cache.get(4) == 4)
+print(our_cache.get(4) == 4)
 # Test Case 3
-assert(our_cache.get(5) == 5)
-
-
-
-# https://knowledge.udacity.com/questions/815698
-# https://knowledge.udacity.com/questions/74836
-
+print(our_cache.get(5) == 5)

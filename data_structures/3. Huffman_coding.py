@@ -79,11 +79,11 @@ def huffman_encoding(data):
         new_node_created.left = left_node
         new_node_created.right = right_node
 
-        next_iteration = False
+        next_iteration = 0
         for index in range(0, len(ordered_list_freq_count)):
             if ordered_list_freq_count[index].value[1] == new_node_created.value[1]:
                 ordered_list_freq_count.insert(index, new_node_created)
-                next_iteration = True
+                next_iteration = 1
                 break
 
         if next_iteration:

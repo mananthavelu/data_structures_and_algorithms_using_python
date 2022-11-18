@@ -1,0 +1,8 @@
+# Selection of Data Structures
+
+The choices made here are;
+
+Hash table: For us to be able to accumulate the count for each character; using dictionary
+Binary Tree: As given in the input details in the problem
+Sorted Frequency: is done on the values of the value of the frequeuncy counter
+Concept of Building a tree: Follows the given requirements and the principles of Binary Tree

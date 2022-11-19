@@ -8,6 +8,16 @@ Since the requirement is to get, insert, remove a <key, value> pair in a constan
 
 Making use of the above two data strcuctures fulfilling the eviction policy was the direction i took in solving this problem.
 
+
+Time Complexity:
+Insertion of a <key,value> pair: O(1)
+Deletion of a <key,value> pair: O(1)
+Searching for a <key,value> pair: O(1)
+
+Space Complexity:O(n)
+whereas;
+n: (input) size of a linked list
+
 https://knowledge.udacity.com/questions/815698
 https://knowledge.udacity.com/questions/74836
 https://www.youtube.com/watch?v=S6IfqDXWa10&t=118s

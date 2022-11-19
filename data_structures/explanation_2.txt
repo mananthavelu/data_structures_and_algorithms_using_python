@@ -1,2 +1,13 @@
 Algorithm/Technique used: Recursion is used given the fact that the depth of the folder structure may be a large to either traverse.
 Recursion helps us to backtrack to the previous stages (Parent Directory for each file/folder) by recalling the same function.
+
+Time complexity:
+O(n*m): 
+This is because;
+a. In a folder, there may be in total 'n' number of files and sub-folder
+b. Individidual sub-folder may contain its own number of items which may be 'n'  or ' more than n' i.e m
+
+COnsidering that 'm'  is constant; this can be simplified as O(n)
+
+Space complexity:O(n)
+Total number of files with .c which is at the worst case; all files contain .c extension

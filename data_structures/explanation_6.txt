@@ -1,0 +1,14 @@
+# Union looks for all the elements which are in both Linked List 1 and 2. Linked list traversal along with membership check is a method which is used in solving both the problems.
+
+Time complexity: Worst case/Average case/ Best case: In all the cases; traversal is need to check for the elements and its membership.
+
+1.Union: O(n*m)
+2. Intersection: O(n*m)
+
+Space complexity: Worst case/Average case/ Best case:
+1. Union: O(n+m)
+2. Intersection: O(n+m)
+
+
+n- length of an input to linked list 1
+m- length of an input to linked list 2

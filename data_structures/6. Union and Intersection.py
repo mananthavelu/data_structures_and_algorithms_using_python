@@ -53,34 +53,34 @@ class LinkedList:
         return size
 
 def union(llist_1, llist_2):
-    results = []
+    results = set()
     head_llist_1 = llist_1.head
     head_llist_2 = llist_2.head
     while head_llist_1:
         value_to_add = head_llist_1.value
         if value_to_add not in results:
-            results.append(value_to_add)
+            results.add(value_to_add)
         head_llist_1 = head_llist_1.next
 
     while head_llist_2:
         value_to_add = head_llist_2.value
         if value_to_add not in results:
-            results.append(value_to_add)
+            results.add(value_to_add)
         head_llist_2 = head_llist_2.next
 
-    return results
+    return list(results)
 
 def intersection(llist_1, llist_2):
-    results = []
+    results = set()
     head_llist_1 = llist_1.head
     head_llist_2 = llist_2.head
 
     while head_llist_1:
         if llist_1.search_v(head_llist_1.value) and llist_2.search_v(head_llist_1.value):
-            results.append(head_llist_1.value)
+            results.add(head_llist_1.value)
         head_llist_1 = head_llist_1.next
 
-    return list(set(results))
+    return list(results)
     
 
 # Test case 1
@@ -97,8 +97,8 @@ for i in element_1:
 for i in element_2:
     linked_list_2.append(i)
 
-print (union(linked_list_1,linked_list_2))
-print (intersection(linked_list_1,linked_list_2))
+print (union(linked_list_1,linked_list_2))#returns [3, 2, 4, 35, 6, 65, 21, 32, 9, 1, 11]
+print (intersection(linked_list_1,linked_list_2))#[4, 21, 6]
 
 # Test case 2
 
@@ -114,14 +114,57 @@ for i in element_1:
 for i in element_2:
     linked_list_4.append(i)
 
-print (union(linked_list_3,linked_list_4))
-print (intersection(linked_list_3,linked_list_4))
+print (union(linked_list_3,linked_list_4))#returns [3, 2, 4, 35, 6, 65, 23, 1, 7, 8, 9, 11, 21]
+print (intersection(linked_list_3,linked_list_4))#returns []
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
 
-# Test Case 1
-
-# Test Case 2
-
 # Test Case 3
+
+linked_list_1 = LinkedList()
+linked_list_2 = LinkedList()
+
+element_1 = [3,2]
+element_2 = [6,3]
+
+for i in element_1:
+    linked_list_1.append(i)
+
+for i in element_2:
+    linked_list_2.append(i)
+
+print (union(linked_list_1,linked_list_2))#returns [3, 2, 6]
+print (intersection(linked_list_1,linked_list_2))# returns [3]
+
+# Test Case 4
+linked_list_1 = LinkedList()
+linked_list_2 = LinkedList()
+
+element_1 = []
+element_2 = [11,21,1]
+
+for i in element_1:
+    linked_list_1.append(i)
+
+for i in element_2:
+    linked_list_2.append(i)
+
+print (union(linked_list_1,linked_list_2))#returns [11, 21, 1]
+print (intersection(linked_list_1,linked_list_2))#returns []
+
+# Test Case 5
+linked_list_1 = LinkedList()
+linked_list_2 = LinkedList()
+
+element_1 = []
+element_2 = []
+
+for i in element_1:
+    linked_list_1.append(i)
+
+for i in element_2:
+    linked_list_2.append(i)
+
+print (union(linked_list_1,linked_list_2))#returns []
+print (intersection(linked_list_1,linked_list_2))#returns []

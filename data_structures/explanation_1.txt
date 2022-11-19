@@ -1,4 +1,4 @@
-# Reason for the choice of data structure
+# Reason for the choice of data structures
 
 Since the requirement is to get, insert, remove a <key, value> pair in a constant time; the following were my thoughts to begin with;
 

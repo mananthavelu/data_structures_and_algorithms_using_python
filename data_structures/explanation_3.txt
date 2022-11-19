@@ -6,3 +6,12 @@ Hash table: For us to be able to accumulate the count for each character; using 
 Binary Tree: As given in the input details in the problem
 Sorted Frequency: is done on the values of the value of the frequeuncy counter
 Concept of Building a tree: Follows the given requirements and the principles of Binary Tree
+
+Time complexity:
+huffman_encoding: O(n:frequeuncy builder + olog(n):sorting + nlog(n):tree builder + O(n):tree traversal) leading to O(nlog(n))
+huffman_decoding:
+
+
+Space complexity:
+huffman_encoding:O(n): Size of the input
+huffman_decoding:O(n)

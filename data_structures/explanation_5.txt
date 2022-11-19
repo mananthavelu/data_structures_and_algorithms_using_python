@@ -5,4 +5,12 @@
 4. Linked List data structure is used as the chain of blocks imitate Linked List strucure (with a pointer to the next block)
 
 
+Time complexity:
+Insertion of a Block: O(1)
+Traverse a Block: O(n)
+
+Space complexity:
+Insertion of a Block: O(n)
+Traverse a Block: O(n)
+
 Reference: https://knowledge.udacity.com/questions/363520

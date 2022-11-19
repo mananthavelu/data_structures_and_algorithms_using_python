@@ -75,14 +75,14 @@ time_stamp_one = time.time()
 data_one = "HelloBlock1"
 previous_hash_one = 0
 block_chain.add_a_block(time_stamp_one, data_one)
-print(f"1 {block_chain}")
+print(f"1 {block_chain}")#returns ['HelloBlock1']
 
 # Test Case 2
 time_stamp_two = time.time()
 data_two = "HelloBlock2"
 previous_hash_two = 0
 block_chain.add_a_block(time_stamp_two, data_two)
-print(f"2 {block_chain}")
+print(f"2 {block_chain}")#returns ['HelloBlock1', 'HelloBlock2']
 
 
 # Test Case 3
@@ -91,6 +91,6 @@ data_three = "HelloBlock3"
 previous_hash_three = 0
 block_chain.add_a_block(time_stamp_three, data_three)
 
-print(f"3 {block_chain}")
+print(f"3 {block_chain}")#returns ['HelloBlock1', 'HelloBlock2', 'HelloBlock3']
 
 print(block_chain.traverse())

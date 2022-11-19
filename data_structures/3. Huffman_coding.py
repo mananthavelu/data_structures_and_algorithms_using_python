@@ -148,61 +148,61 @@ if __name__ == "__main__":
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))
 
-    encoded_data, tree = huffman_encoding(a_great_sentence)
+    encoded_data, tree = huffman_encoding(a_great_sentence)#returns 01101000100011111110110111000001110101100010100100010001001100011011100
 
     print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
     print ("The content of the encoded data is: {}\n".format(encoded_data))
 
-    decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data = huffman_decoding(encoded_data, tree)#returns The bird is the word
 
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
     print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-# Add your own test cases: include at least three test cases
-# and two of them must include edge cases, such as null, empty or very large values
+    # Add your own test cases: include at least three test cases
+    # and two of them must include edge cases, such as null, empty or very large values
 
-# Test Case 1
-a_great_sentence_one = "Hello positivity"
+    # Test Case 1
+    a_great_sentence_one = "Hello positivity"
 
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_one)))
-print ("The content of the data is: {}\n".format(a_great_sentence_one))
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_one)))
+    print ("The content of the data is: {}\n".format(a_great_sentence_one))
 
-encoded_data, tree = huffman_encoding(a_great_sentence_one)
+    encoded_data, tree = huffman_encoding(a_great_sentence_one)#returns 100011010010001000111100111101101110011011011110111001010
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-print ("The content of the encoded data is: {}\n".format(encoded_data))
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
 
-decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data = huffman_decoding(encoded_data, tree)#returns 'Hello positivity'
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-# Test Case 2
-a_great_sentence_two = "Winter is coming"
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_two)))
-print ("The content of the data is: {}\n".format(a_great_sentence_two))
+    # Test Case 2
+    a_great_sentence_two = "Winter is coming"
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_two)))
+    print ("The content of the data is: {}\n".format(a_great_sentence_two))
 
-encoded_data, tree = huffman_encoding(a_great_sentence_two)
+    encoded_data, tree = huffman_encoding(a_great_sentence_two)#returns 011010001000111111101101010110011011011101010010100011000
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-print ("The content of the encoded data is: {}\n".format(encoded_data))
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
 
-decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data = huffman_decoding(encoded_data, tree)#returns 'Winter is coming'
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-# Test Case 3
-a_great_sentence_three = "Progress is exponential in learnig"
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_three)))
-print ("The content of the data is: {}\n".format(a_great_sentence_three))
+    # Test Case 3
+    a_great_sentence_three = "Progress is exponential in learnig"
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence_three)))
+    print ("The content of the data is: {}\n".format(a_great_sentence_three))
 
-encoded_data, tree = huffman_encoding(a_great_sentence_three)
+    encoded_data, tree = huffman_encoding(a_great_sentence_three)#returns 001000111111100001101110011001011101011001011110110011000111101111101011101101010010101001011101001111011010011010101000011110101110
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-print ("The content of the encoded data is: {}\n".format(encoded_data))
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
 
-decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data = huffman_decoding(encoded_data, tree)#returns Progress is exponential in learnig
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))

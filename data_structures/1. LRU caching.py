@@ -99,8 +99,8 @@ our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-print(our_cache.get(11) == -1)
+print(our_cache.get(11) == -1)#returns True
 # Test Case 2
-print(our_cache.get(4) == 4)
+print(our_cache.get(4) == 4)#returns True
 # Test Case 3
-print(our_cache.get(5) == 5)
+print(our_cache.get(5) == 5)#returns True

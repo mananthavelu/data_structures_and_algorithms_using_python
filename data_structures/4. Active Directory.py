@@ -32,7 +32,6 @@ child.add_group(sub_child)
 parent.add_group(child)
 
 
-
 def is_user_in_group(user, group):
     """
     Return True if user is in the group, False otherwise.
@@ -57,8 +56,8 @@ def is_user_in_group(user, group):
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-print(is_user_in_group("Child One", child))
+print(is_user_in_group("Child One", child))#returns True
 # Test Case 2
-print(is_user_in_group("", parent))
+print(is_user_in_group("", parent))#returns False
 # Test Case 3
-print(is_user_in_group("sub_child_user", sub_child))
+print(is_user_in_group("sub_child_user", sub_child))#returns True

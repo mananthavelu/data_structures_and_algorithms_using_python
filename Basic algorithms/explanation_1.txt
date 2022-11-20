@@ -1,0 +1,9 @@
+Choice of algorithm: Binary search algorithm. This is because; an array which can be constructued from the given input 'number'. 
+i.e lowest to highest order (sorted array) in which we can apply Binary Search
+
+Problem to solve: search
+Since the derived array from the array is sorted; we can apply the Binary search Tree with a change in the 'stop' condition which in this case; 
+when a values square equal the given input
+
+Time complexity: O(log(n))# as search in an ordered array using Binary search takes O(log(n))
+Space complexity: O(log(1))#For storing the final result

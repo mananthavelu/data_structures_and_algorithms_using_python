@@ -13,7 +13,7 @@ def test_function(test_case):
     output = rearrange_digits(test_case[0])
     solution = test_case[1]
     if sum(output) == sum(solution):
-        print("Pass")
+        print("Pass")   
     else:
         print("Fail")
 

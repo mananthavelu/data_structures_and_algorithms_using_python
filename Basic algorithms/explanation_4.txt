@@ -1,0 +1,4 @@
+Approach: Traverse an array; by moving all the 0s to the front and 2s to the end.
+
+Time complexity: O(n)
+Space complexity: O(1)

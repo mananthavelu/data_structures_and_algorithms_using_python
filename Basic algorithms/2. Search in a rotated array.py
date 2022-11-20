@@ -7,6 +7,17 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
+    # Find the index of a random pivot
+    left = 0
+    right = len(input_list) - 1
+    while left <= right:
+        middle = (left + right) // 2
+        if input_list[middle] < (input_list[middle - 1]) and (input_list[middle] < input_list[middle + 1]):
+            pivot = middle
+            break
+        elif input_list[middle] > (input_list[middle - 1]) and (input_list[middle]) < input_list[middle + 1]:
+
+        
    pass
 
 def linear_search(input_list, number):
@@ -23,7 +34,7 @@ def test_function(test_case):
     else:
         print("Fail")
 
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
+test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4] , 6])
 test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])

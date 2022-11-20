@@ -1,0 +1,4 @@
+Approach taken: When we traverse, we compare each element to the already existing min and max element.
+
+Time complexity: O(n)
+Space complexity: O(1)

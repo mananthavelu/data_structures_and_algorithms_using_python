@@ -1,0 +1,7 @@
+As a firt step; the pivot was supposed to be found for us to be able to know on which part of the array; we will need to apply the binary search.
+Thus; the solution to the problem includes two steps;
+a. Finding a pivot
+b. Finding a target number
+
+Time complexity:O(log(n))
+Space complexity: O(1)

@@ -7,7 +7,10 @@ def rearrange_digits(input_list):
     Returns:
        (int),(int): Two maximum sums
     """
-    pass
+    result_one = []
+    result_two = []
+    sorted_input = meerge_sort(input_list)
+    for index, element in enumerate(sorted_input)
 
 def test_function(test_case):
     output = rearrange_digits(test_case[0])

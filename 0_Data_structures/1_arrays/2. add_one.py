@@ -4,7 +4,6 @@
 # Examples:[1,9,9] will return [2,0,0]
 
 
-
 def add_one(input_array):
     borrow = 1
     for i in range(len(input_array), 0, -1):

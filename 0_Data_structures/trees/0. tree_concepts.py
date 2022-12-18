@@ -3,7 +3,8 @@
 # Trees are non-linear data structure
 # Tree has a 'root' 
 # The access to the Tree is using 'root' 
-# Tree must be connected
+# Tree must be connected - there is only one path between any two vertices in a tree
+# Tree is an un-directed graph
 # Tree must not have cycles
 # Terms: 
 # Level: 'root' is at level 1 and the 'node' connected to it is at level 2 (Starts from top-> reaching bottom)

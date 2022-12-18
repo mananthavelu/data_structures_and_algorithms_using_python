@@ -1,0 +1,3 @@
+# Unlike trees, there is no root in a Graph
+# We can start with any node
+# DFS - uses Stack

@@ -1,0 +1,16 @@
+Steps taken:
+
+1. Check by element in an input list if it is largest integer in the list between 9 to 1
+2. Append it to the larger or smaller intermediate list
+3. Return the final intermediate lists as integers
+
+Time complexity:
+
+O(N) : 
+
+Time complexity for outer loop: O(1)
+Time complexity for inner loop: O(n)
+
+Space complexity:
+
+O(N): The total number of elements can stored and returned as a result is N in total which is the length of the input

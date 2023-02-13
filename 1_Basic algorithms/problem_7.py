@@ -1,6 +1,6 @@
 
 class RouteTrie:
-    
+
     def __init__(self):
         # Initialize the trie with an root node and a handler, this is the root path or home page node
         self.root_node = '/'
@@ -34,3 +34,11 @@ class RouteTrie:
                 _current = _current.children
                 _current = _current[sub_path]
             handler = _current.handler
+
+    def __repr__(self):
+        return f"{self.handler} {self.root_node}"
+
+"""
+Trie_example = RouteTrie()
+print(RouteTrie())
+"""

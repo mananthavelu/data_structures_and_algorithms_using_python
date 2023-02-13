@@ -1,0 +1,20 @@
+Steps taken:
+
+1. The code is similar to the Trie implementation whereas it is intended to add(insert) the valid path as needed
+
+
+
+Time and Space Complexity:
+
+RouteTrie:
+
+insertmethod: Time and space Complexity are both O(N) whereas N - is the number of parts in the URL.
+find method: Time Complexity is O(N), Space Complexity is O(1)
+
+RouteTrieNode:
+Space Complexity and Time Complexity: O(1) given the dictionary implementation to be able to insert and retrieve in constant Time
+
+Router:
+
+add_handler method: Time and space Complexity are both : O(N)
+look up method: Time Complexity is O(N) whereas the space Complexity is O(1)

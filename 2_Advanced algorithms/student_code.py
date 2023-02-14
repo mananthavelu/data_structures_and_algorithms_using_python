@@ -1,4 +1,8 @@
 
+from helpers import Map, load_map, show_map
+from student_code import shortest_path
+
+
 def cum_distance(Map, node1, node2):
     """
     Calculates the distance between to given nodes in the map

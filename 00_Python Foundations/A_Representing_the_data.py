@@ -7,7 +7,7 @@
 # None is a special constant which represents the absence of the value
 
 
-""" 
+
 # Bolean
 
 # Integer
@@ -22,5 +22,5 @@ print(y + ' Hey')
 help(x)
 
 # String/Text
-"""
+
 # Collections

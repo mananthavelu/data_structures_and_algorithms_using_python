@@ -38,9 +38,4 @@ print(y + ' Hey')
 # It is a collection
 # It is an iterable
 # It is sized
-
-
-
-
 # Collections
-""" 

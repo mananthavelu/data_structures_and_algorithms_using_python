@@ -73,3 +73,7 @@ def calculate_median_method_one(list_of_values):
     return list(mode.keys())[0]
 
 print("Successful" if calculate_median_method_one([1,2,3,3,5,6,7]) == 3 else "Error")
+print("Successful" if calculate_median_method_one([1,2,3,3,5,5,5,6,7]) == 5 else "Error")
+
+
+# Percentiles / Quantiles

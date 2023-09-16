@@ -1,4 +1,4 @@
-# 2. Basic Function
+# 1. Basic Function
 def check_for_membership(item, input_array):
     """
     This function receives an input array and an item for which the membership property is checked against
@@ -8,7 +8,7 @@ def check_for_membership(item, input_array):
     input_array (list): an input list which contains collection of elements.
 
     Returns:
-    String or None: Message if an item foundin the input_array or None when not found.
+    Boolean: True or False if an item foundin the input_array or not.
     """
     for element in input_array:
         if item == element:
@@ -16,7 +16,8 @@ def check_for_membership(item, input_array):
     else:
         return False
 
-print("pass" if check_for_membership(1, [2,3,4]) == False else "Fail")
-print("pass" if check_for_membership(3, [2,3,4]) == True else "Fail")
+if __name__ == "__main__":
+    print("pass" if check_for_membership(1, [2,3,4]) == False else "Fail")
+    print("pass" if check_for_membership(3, [2,3,4]) == True else "Fail")
 
-# 2, Functions with several parameters
+# 2. Functions with several types of parameters

@@ -1,3 +1,24 @@
+sample = np.random.choice(pop_data, size = 3)
+mean = np.mean(sample)
+var_sample = np.var(sample)
+std_sample= np.std(sample)
+print(mean, var_sample, std_sample)
+mean_population = np.mean(pop_data)
+var_population = np.var(pop_data)
+std_population = np.std(pop_data)
+print(mean_population, var_population, std_population)
+mean_size_3 = []
+for _ in range(10000):
+    sample_draw = np.random.choice(pop_data, size = 3)
+    mean_size_3.append(np.mean(sample_draw))
+
+var_3 = np.var(mean_size_3)
+std_3 = np.std(mean_size_3)
+mean_3 = np.mean(mean_size_3)
+print(mean_3, var_3, std_3)
+
+import matplotlib.pyplot as plt
+plt.hist(mean_size_3, alpha = 0.6, label = 'Sample size 3')
 # Meansure of central value
 
 # Mean

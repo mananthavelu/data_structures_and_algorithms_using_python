@@ -22,19 +22,49 @@ class SinglyLinkedList:
         print("Head is initialized")
     
     # add new node
-    def add_node(self, node_data):
+    def append(self, node_data):
         if self.head is None:
             self.head = Node(node_data)
             print("Head is added")
-            #return
+            return
         else:
             current_node = self.head
             while current_node.next:
                 current_node = current_node.next
             current_node.next = Node(node_data)
             print("New node added")
-            #return
+            return
     
+    # Add a node in a particular position
+    def add_node_at_position(self, node_data, position):
+        new_node = Node(node_data)
+        if self.head is None:
+            self.head = new_node
+            return
+        if position == 1:
+            self.prepend(node_data)
+            return
+        current_position = 2
+        current_node = self.head
+        while current_node is not None:
+            if position == current_position:
+                new_node.next = current_node.next
+                current_node.next = new_node
+                return
+            current_position += 1
+            current_node = current_node.next
+
+    # Prepend a node to the linked list
+    def prepend(self, node_data):
+        new_node = Node(node_data)
+        if self.head is None:
+            self.head = new_node
+            print("Head is added")
+            return
+        new_node.next = self.head
+        self.head = new_node
+        
+
     # print linked list
     def print_linked_list(self):
         current_node = self.head
@@ -69,16 +99,22 @@ class SinglyLinkedList:
         res += "-> None]"
         return res
 
-# Test
+# Test case
 node_1 = 1
 node_2 = 2
 node_3 = 3
 node_4 = 4
-ll1 = SinglyLinkedList(node_1)
-ll1.add_node(node_2)
-ll1.add_node(node_3)
-ll1.add_node(node_4)
-ll1.print_linked_list()
-print(ll1.to_list())
-print(ll1)
-print("pass" if (ll1.head.data == 1) else "fail")
+node_5 = 10
+linked_list_one = SinglyLinkedList(node_1)
+linked_list_one.append(node_2)
+linked_list_one.append(node_3)
+linked_list_one.append(node_4)
+print("pass" if (linked_list_one.head.data == 1) else "fail")
+linked_list_one.prepend(node_5)
+linked_list_one.add_node_at_position(17, 1)
+linked_list_one.print_linked_list()
+print(linked_list_one.to_list())
+print(linked_list_one)# Head node is given an entry point
+print("pass" if (linked_list_one.head.data == 10) else "fail")
+
+# TODO Add a method to remove an element from the linked list using position, using value

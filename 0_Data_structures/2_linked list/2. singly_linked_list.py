@@ -63,6 +63,25 @@ class SinglyLinkedList:
             return
         new_node.next = self.head
         self.head = new_node
+
+    # Remove a head node
+    def remove_head(self):
+        current_node = self.head
+        self.head = current_node.next
+        return
+
+    # Remove a node from a particular position
+    def remove_node_at_position(self, position):
+        if position == 1:
+            return self.remove_head
+        current_node = self.head
+        current_position = 2
+        while current_node is not None:
+            if current_position == position:
+                current_node.next = current_node.next.next
+                return
+            current_node = current_node.next
+            current_position += 1
         
 
     # print linked list
@@ -72,6 +91,18 @@ class SinglyLinkedList:
             print(current_node.data)
             current_node = current_node.next
         return
+
+    # Search for a node data
+    def search(self, input):
+        if self.head.data == input:
+            return True
+        current_node = self.head
+        while current_node is not None:
+            if current_node.data == input:
+                return True
+            current_node = current_node.next
+        return False
+        
 
     # convert linked list to list
     def to_list(self):
@@ -109,12 +140,11 @@ linked_list_one = SinglyLinkedList(node_1)
 linked_list_one.append(node_2)
 linked_list_one.append(node_3)
 linked_list_one.append(node_4)
-print("pass" if (linked_list_one.head.data == 1) else "fail")
 linked_list_one.prepend(node_5)
 linked_list_one.add_node_at_position(17, 1)
-linked_list_one.print_linked_list()
-print(linked_list_one.to_list())
+linked_list_one.remove_head()
 print(linked_list_one)# Head node is given an entry point
-print("pass" if (linked_list_one.head.data == 10) else "fail")
-
-# TODO Add a method to remove an element from the linked list using position, using value
+linked_list_one.remove_node_at_position(2)
+print(linked_list_one)# Head node is given an entry point
+print(linked_list_one.search(2))
+# TODO Search for a value,pop a value, Size of a linked list

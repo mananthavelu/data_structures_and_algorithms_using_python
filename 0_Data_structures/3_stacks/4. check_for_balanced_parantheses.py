@@ -24,7 +24,7 @@ class Stack:
 # Concept: Add each '('  to the stack
 # For each ')', pop an open paranthesis
 # Return False; when poped element is None (means, there are more '(' and less ')' 
-
+# Idea: Equal number of times the '(' is pushed and '(' is popped.
 
 def balanced_parantheses(input_string):
     if input_string == '':

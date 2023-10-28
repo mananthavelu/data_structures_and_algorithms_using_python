@@ -26,6 +26,23 @@ class Stack:
 # Return False; when poped element is None (means, there are more '(' and less ')' 
 # Idea: Equal number of times the '(' is pushed and '(' is popped.
 
+# ((32+8)∗(5/2))/(2+6)
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def size(self):
+        return len(self.items)
+    
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if self.size()==0:
+            return None
+        else:
+            return self.items.pop()
+
 def balanced_parantheses(input_string):
     if input_string == '':
         return False

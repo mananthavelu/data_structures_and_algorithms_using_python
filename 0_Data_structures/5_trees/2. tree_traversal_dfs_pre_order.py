@@ -70,6 +70,9 @@ class TreeNode:
         self.data = data
         self.left = None
         self.right = None
+        self.left_visited = False
+        self.right_visited = False
+        self.visited = False
         
     # Set the value of the tree node
     def set_value(self, new_data):
@@ -102,7 +105,22 @@ class TreeNode:
     # Check if the right child exists
     def has_right_child(self):
         return self.right != None
+
+    def is_left_visited(self):
+        return self.left_visited
     
+    def is_right_visited(self):
+        return self.right_visited
+
+    def set_left_visited(self):
+        self.left_visited == True
+
+    def set_right_visited(self):
+        self.right_visited == True
+
+    def set_visited(self):
+        self.visited = True
+
     def __repr__(self):
         return f"Node({self.get_value()})"
     
@@ -150,9 +168,7 @@ def pre_order_traversal(input_tree, debug_mode = False):
     state = State(node)
     stack.push(state)
     visiting_order.append(node.get_value())
-    count = 0
     while node:
-        count += 1
         if debug_mode:
             print(f"""current node:{node}, stack: {stack}""")
         if node.has_left_child() and not state.get_left_visited():
@@ -166,7 +182,7 @@ def pre_order_traversal(input_tree, debug_mode = False):
             node = node.get_right_child()
             visiting_order.append(node.get_value())
             state = State(node)
-            #stack.push(state)
+            stack.push(state)
         else:
             stack.pop()
             if not stack.is_empty():
@@ -177,7 +193,6 @@ def pre_order_traversal(input_tree, debug_mode = False):
     if debug_mode:
         print(f"""current node:{node}, stack: {stack}""")
     return visiting_order
-
 
 # Test cases - 1
 # create a tree and add some nodes
@@ -195,3 +210,51 @@ tree.get_root().get_left_child().set_left_child(TreeNode("dates"))
 
 # check pre-order traversal
 print(pre_order_traversal(tree, debug_mode= True))
+
+def pre_order_with_stack_two(tree):
+    visit_order = list()
+    stack = Stack()
+    node = tree.get_root()
+    while (not stack.is_empty()) or node:
+        if node:
+            visit_order.append(node.data)# We visit the Root node
+            stack.push(node.get_right_child())# We push the Right node to Stack
+            node = node.get_left_child()# Then move to the left child
+        else:
+            node = stack.pop()# We pop the right nodes from the reverse 
+    return visit_order
+
+print(pre_order_with_stack_two(tree))
+
+
+def in_order_traversal(tree):
+    stack = Stack()
+    current_node = tree.get_root() # We alwayss tart with root
+    visited_nodes = []
+    while current_node or not stack.is_empty():
+        while current_node:
+            stack.push(current_node)
+            current_node =current_node.get_left_child()
+
+        current_node = stack.pop()
+        visited_nodes.append(current_node.get_value())
+        current_node = current_node.get_right_child()
+    return visited_nodes
+
+print(in_order_traversal(tree))
+
+
+
+def post_order_traversal(tree):
+    stack = Stack()
+    current_node = tree.get_root() # We alwayss tart with root
+    visited_nodes = []
+    while current_node or not stack.is_empty():
+        while current_node:
+            stack.push(current_node)
+            current_node =current_node.get_left_child()
+        current_node = stack.pop()
+        
+    return visited_nodes
+
+print(post_order_traversal(tree))

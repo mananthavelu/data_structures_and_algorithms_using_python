@@ -4,9 +4,12 @@ You have been given an array containg numbers. Find and return the largest sum i
 
 def max_sum_sub_array(input_array):
     current_sum = input_array[0]
-    max_sum = [0]
+    max_sum = input_array[0]
     
     for element in input_array[1:]:
         current_sum = max(current_sum + element, element)
         max_sum = max(current_sum, max_sum)
     return max_sum
+
+
+result= max_sum_sub_array([1,-1,4,-6,-6])

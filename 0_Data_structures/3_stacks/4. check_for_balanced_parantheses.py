@@ -4,6 +4,7 @@
 # Stack consists of two main operations: push and pop
 # This implementation is directly using list - which acts similar to dynamic array
 
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -44,6 +45,7 @@ class Stack:
             return self.items.pop()
 
 def balanced_parantheses(input_string):
+    mapping = {')': '(', '}':'{'}
     if input_string == '':
         return False
     stack = Stack()
@@ -51,11 +53,10 @@ def balanced_parantheses(input_string):
         if char == '(':
             stack.push(char)
         elif char == ')':
-            if stack.pop() is None:
+            if mapping[char] != stack.pop():
                 return False
-    if stack.size() == 0:
-        return True
-    else:
-        return False
-            
-    
+                
+    return stack.size() == 0
+
+print(f"Successful" if balanced_parantheses('((32+8)∗(5/2))/(2+6)') == True else "Failed")
+print(f"Successful" if balanced_parantheses('((32+8))∗(5/2))/(2+6)') == False else "Failed")

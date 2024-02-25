@@ -103,6 +103,7 @@ class SinglyLinkedList:
             current_node = current_node.next
         return False
     # Reverse a linked list
+    """     
     def reverse_linked_list(self):
         # Keep the None as the self.heads next
         # 
@@ -113,7 +114,8 @@ class SinglyLinkedList:
             node_to_point_to = current_node
             current_node = current_node.next
         self.head = node_to_point_to
-        return
+        return 
+    """
 
     # convert linked list to list
     def to_list(self):
@@ -158,6 +160,8 @@ print(linked_list_one)# Head node is given an entry point
 linked_list_one.remove_node_at_position(2)
 print(linked_list_one)# Head node is given an entry point
 print(linked_list_one.search(2))
-linked_list_one.reverse_linked_list()
-print(linked_list_one)
+""" linked_list_one.reverse_linked_list()
+print(linked_list_one) """
 # TODO Search for a value,pop a value, Size of a linked list
+print(linked_list_one.head.data)
+print(linked_list_one.to_list())

@@ -27,6 +27,7 @@ class SinglyLinkedList:
         current_node.next = Node(new_data)
         return
 
+
 def isCircular(linked_list):
     if linked_list.head is None:
         return False

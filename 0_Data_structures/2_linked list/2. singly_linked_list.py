@@ -159,13 +159,40 @@ class SinglyLinkedListHeadTail:
         new_node = Node(data)
         self.tail.next = new_node
         self.tail = self.tail.next
-        
+
+    def find_middle(self):
+        if self.head is None:
+            return 0
+        current_node = self.head
+        slow_traverse = self.head
+        fast_traverse = self.head
+        while fast_traverse and fast_traverse.next:
+            slow_traverse = slow_traverse.next
+            fast_traverse = fast_traverse.next.next
+        return slow_traverse.data
+
+    def detect_cycle(self):
+        if self.head is None:
+            return "The linked list is empty"
+        slow_mover = self.head
+        fast_mover = self.head
+        while fast_mover and fast_mover.next:
+            slow_mover = slow_mover.next
+            fast_mover = fast_mover.next.next
+            if slow_mover.data == fast_mover.data:
+                return True
+        return False
+
+
 new_ss_list = SinglyLinkedListHeadTail()
 new_ss_list.append("C1")
 new_ss_list.append("C2")
 new_ss_list.append("C3")
 new_ss_list.append("C4")
+new_ss_list.append("C5")
 print(f"The new ss list is: {new_ss_list}")
+print(new_ss_list.find_middle())
+print(new_ss_list.detect_cycle())
 
 """
 new_node = Node('Switezerland')

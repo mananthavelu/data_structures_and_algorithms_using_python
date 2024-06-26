@@ -1,5 +1,5 @@
 ### Purpose:
-<p>This repository can be used for learning the concepts of the Data Structures and algorithms with some implementations using Python.</p>
+<p>This repository can be used for learning the concepts of the Data Structures and algorithms with some implementations using Python. I use this for refreshing myself often. Appreciate the feedback</p>
 
 ### How to use of the Repository:
 

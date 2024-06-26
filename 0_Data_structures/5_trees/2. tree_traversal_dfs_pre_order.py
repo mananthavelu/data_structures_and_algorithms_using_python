@@ -7,8 +7,6 @@
 # Pre-Order Traversal: root, left, right
 # In- Order Traversal: left, root, right
 # Post - Order Traversal: left, right, root
-
-
 """
 Pre-Order
 
@@ -19,9 +17,9 @@ Pre-Order
 
 Detailed Steps: 
 1. Initialize Stack
-2. Add root node to Stack, add to visited nodes
-3. Add left node to Stack, add to visited nodes
-
+2. Add root node of the tree to Stack, add to visited nodes
+2. Add right sub-tree to Stack. This means, we will be visiting the right sub-tree only after visiting the left sub-tree
+3. Add left sub-tree to Stack, add to visited nodes
 
 DFS uses Stack
 """
@@ -70,9 +68,9 @@ class TreeNode:
         self.data = data
         self.left = None
         self.right = None
+        self.visited = False
         self.left_visited = False
         self.right_visited = False
-        self.visited = False
         
     # Set the value of the tree node
     def set_value(self, new_data):
@@ -104,7 +102,7 @@ class TreeNode:
     
     # Check if the right child exists
     def has_right_child(self):
-        return self.right != None
+        return self.right is not None
 
     def is_left_visited(self):
         return self.left_visited
@@ -122,9 +120,6 @@ class TreeNode:
         self.visited = True
 
     def __repr__(self):
-        return f"Node({self.get_value()})"
-    
-    def __str__(self):
         return f"Node({self.get_value()})"
     
 class Tree:
@@ -210,7 +205,8 @@ tree.get_root().get_left_child().set_left_child(TreeNode("dates"))
 
 # check pre-order traversal
 print(pre_order_traversal(tree, debug_mode= True))
-
+"""
+# alternative way
 def pre_order_with_stack_two(tree):
     visit_order = list()
     stack = Stack()
@@ -226,7 +222,44 @@ def pre_order_with_stack_two(tree):
 
 print(pre_order_with_stack_two(tree))
 
+"""
+def pre_order_using_stack(tree_node):
+    stack = []
+    visited_nodes = []
+    node = tree_node.get_root()
+    while stack or node:
+        visited_nodes.append(node)
+        if node.has_right_child():
+            stack.append(node.get_right_child())
+        if node.has_left_child():
+            stack.append(node.get_left_child())
+        if stack:
+            node = stack.pop()
+        else:
+            node = None
+    return visited_nodes
 
+print(pre_order_using_stack(tree))
+    
+
+def in_order_using_stack(tree_node):
+    stack = []
+    visited_nodes = []
+    node = tree_node.get_root()
+    while stack or node:
+        while node:
+            stack.append(node)
+            node = node.get_left_child()
+        node_to_visit = stack.pop()
+        visited_nodes.append(node_to_visit)
+        node = node_to_visit.get_right_child()
+    return visited_nodes
+print("In order is")
+print(in_order_using_stack(tree))
+    
+
+
+"""
 def in_order_traversal(tree):
     stack = Stack()
     current_node = tree.get_root() # We alwayss tart with root
@@ -258,3 +291,4 @@ def post_order_traversal(tree):
     return visited_nodes
 
 print(post_order_traversal(tree))
+"""
